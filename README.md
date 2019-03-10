@@ -5,6 +5,10 @@
 読みました。
 
 ## 1日目
+参考
+
+http://hrb.osask.jp/
+
 * できたこと
     * バイナリエディタで地道にhelloos.imgを作る
     * cmpコマンドで正解と等しいことを確認
@@ -80,6 +84,7 @@ https://hikalium.com/page/note/20161202.md
 
 ## 30日OSあるある
 * Windowsなの...?
+* なんで\が¥じゃないと動作しないんだろうって思ったらShift-JIS
 
 ## 今後
 

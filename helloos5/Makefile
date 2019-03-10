@@ -1,39 +1,39 @@
-
-# ƒfƒtƒHƒ‹ƒg“®ì
+# ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå‹•ä½œ
 
 default :
-	../z_tools/make.exe img
+	../z_tools_osx/make img
 
-# ƒtƒ@ƒCƒ‹¶¬‹K‘¥
+# ãƒ•ã‚¡ã‚¤ãƒ«ç”Ÿæˆè¦å‰‡
 
 ipl.bin : ipl.nas Makefile
-	../z_tools/nask.exe ipl.nas ipl.bin ipl.lst
+	../z_tools_osx/nask ipl.nas ipl.bin ipl.lst
 
 helloos.img : ipl.bin Makefile
-	../z_tools/edimg.exe   imgin:../z_tools/fdimg0at.tek \
-		wbinimg src:ipl.bin len:512 from:0 to:0   imgout:helloos.img
+	../z_tools_osx/edimg   imgin:../z_tools_osx/fdimg0at.tek \
+	wbinimg src:ipl.bin len:512 from:0 to:0   imgout:helloos.img
 
-# ƒRƒ}ƒ“ƒh
+# ã‚³ãƒãƒ³ãƒ‰
 
 asm :
-	../z_tools/make.exe -r ipl.bin
+	../z_tools_osx/make -r ipl.bin
 
 img :
-	../z_tools/make.exe -r helloos.img
+	../z_tools_osx/make -r helloos.img
 
 run :
-	../z_tools/make.exe img
-	copy helloos.img ..\z_tools\qemu\fdimage0.bin
-	../z_tools/make.exe -C ../z_tools/qemu
+	../z_tools_osx/make img
+	cp helloos.img ../z_tools_osx/qemu/fdimage0.bin
+	../z_tools_osx/make -C ../z_tools_osx/qemu
 
+#ãƒ•ãƒ­ãƒƒãƒ”ãƒ¼ãƒ‡ã‚£ã‚¹ã‚¯ã«æ›¸ãè¾¼ã¿
 install :
-	../z_tools/make.exe img
-	../z_tools/imgtol.com w a: helloos.img
+	../z_tools_osx/make img
+	../z_tools_osx/imgtol.com w a: helloos.img
 
 clean :
-	-del ipl.bin
-	-del ipl.lst
+	rm -f ipl.bin
+	rm -f ipl.lst
 
 src_only :
-	../z_tools/make.exe clean
-	-del helloos.img
+	../z_tools_osx/make clean
+	rm -f helloos.img
