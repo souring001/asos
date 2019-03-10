@@ -33,11 +33,49 @@ qemuでブート
 
 `qemu-system-i386 -drive file=helloos.img,format=raw,if=floppy`
 
+参考
+
+http://oswiki.osask.jp/?(AT)memorymap
+
+http://hrb.osask.jp/wiki/?tools/nask
+
+https://hikalium.com/page/note/20161202.md
+
 * できたこと
     * nasmで`helloos.nas`をアセンブル
-        * 参考: https://admarimoin.hatenablog.com/entry/2018/09/03/225406
+    * qemuで`helloos.img`を起動
+        * https://admarimoin.hatenablog.com/entry/2018/09/03/225406
+* できなかった
+    * Mac環境におけるMakefileの作り方
+* 得たこと
+    * naskとNASMの違い
+    * $$はセクションの最初が何バイト目か
+    * $はこの行の最初が何バイト目か
+    * $-$$で先頭から何バイト目かを表す
+    * NASM命令
+        * ORG
+        * MOV
+        * CMP
+        * JE
+        * INT
+        * HLT    
+    * レジスタの仕組み
+        * HとLに分けられる(AX,CX,DX,BX)
+        * 番地の指定に使えるレジスタは限られている(BX,BP,SI,DI)
+    * BIOSのビデオカードで文字を表示している
+    * Makefileの仕組み
+        * 必要なものだけ作り直してくれる
+        * 特に指定しない場合は一番上のものを実行
+        * http://shin.hateblo.jp/entry/2012/05/26/231036
+
+## n日目
+参考
+* できたこと
 * できなかった
 * 得たこと
+
+## 30日OSあるある
+* Windowsなの...?
 
 ## 今後
 
