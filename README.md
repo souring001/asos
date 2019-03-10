@@ -67,6 +67,7 @@ https://hikalium.com/page/note/20161202.md
         * 必要なものだけ作り直してくれる
         * 特に指定しない場合は一番上のものを実行
         * http://shin.hateblo.jp/entry/2012/05/26/231036
+    * gitの名前が違くて別人がcommitしたことになってることに気づく
 
 ## n日目
 参考
