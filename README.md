@@ -68,9 +68,12 @@ https://hikalium.com/page/note/20161202.md
         * 特に指定しない場合は一番上のものを実行
         * http://shin.hateblo.jp/entry/2012/05/26/231036
     * gitの名前が違くて別人がcommitしたことになってることに気づく
+<<<<<<< HEAD
     * terminalのgitのcommiterがなぜか違うメールアドレスとユーザ名になっておりそれを以下で訂正
     * `git config --global user.email "hoge@mail"`
     * `git config --global user.name "hogename"`
+=======
+>>>>>>> 22b7f095d875420d4d91cd232b4af8dfedecefc3
 
 ## n日目
 参考
