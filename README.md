@@ -21,3 +21,25 @@
 
 Macではどうしたらいいんだろう、サポートのURLのリンク切れてるし。
 Linuxでやるか？
+
+## 2日目
+Macでするなら以下のコマンド
+
+アセンブル
+
+`nasm -o helloos.img helloos.nas`
+
+qemuでブート
+
+`qemu-system-i386 -drive file=helloos.img,format=raw,if=floppy`
+
+* できたこと
+    * nasmで`helloos.nas`をアセンブル
+        * 参考: https://admarimoin.hatenablog.com/entry/2018/09/03/225406
+* できなかった
+* 得たこと
+
+## 今後
+
+読みたい
+https://adventar.org/calendars/1666
