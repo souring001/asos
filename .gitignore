@@ -1,6 +1,12 @@
-/z_tools_osx/
+/z_tools/
 *.img
 *.lst
 *.bin
 *.bat
 *.TBL
+*.bim
+*.hrb
+*.gas
+*.map
+*.obj
+*.sys

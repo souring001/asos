@@ -85,9 +85,19 @@ https://github.com/HariboteOS/z_tools_osx
 先駆者のMac, Linux翻訳がすごい...。
 
 ## 3日目
-参考
+Makefileの翻訳で終わった。C言語でOSを書けるようになったらしい。
+
 * できたこと
     * 変数付きMakefileのMac化
+        * `.exe`消す
+        * `-$(DEL)`の`-`を消す
+        * `copy`を`cp`
+        * `del`を`rm -f`
+        * `cc1`を`gocc1`
+        * `cp /B asmhead.bin+bootpack.hrb haribote.sys`
+        * `cat asmhead.bin bootpack.hrb > haribote.sys`
+        * フォルダ名`z_tools_osx`ってしていたけれどこれ`z_tools`にしなきゃダメだった
+    * 真っ黒画面表示
 * できなかった
 * 得たこと
     * NASM命令
@@ -97,6 +107,9 @@ https://github.com/HariboteOS/z_tools_osx
         * JBE
         * EQU
         * 三重ループ
+    * BIOSとはBasic Input Output SystemでOS製作者がよく使いそうなプログラムをPCメーカが用意したもの(2-2より)
+    * VRAMはそれぞれの番地が画面上の画素に対応していて、画面に絵を出すことができるklasdkf
+
 
 ## n日目
 参考
@@ -106,6 +119,7 @@ https://github.com/HariboteOS/z_tools_osx
 
 ## 30日OSあるある
 * Windowsなの...?
+* LinuxやMacでやった先駆者に感心する
 * なんで\が¥じゃないと動作しないんだろうって思ったらShift-JIS
 
 ## 今後
