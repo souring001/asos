@@ -87,8 +87,16 @@ https://github.com/HariboteOS/z_tools_osx
 ## 3日目
 参考
 * できたこと
+    * 変数付きMakefileのMac化
 * できなかった
 * 得たこと
+    * NASM命令
+        * JC
+        * JNC
+        * JAE
+        * JBE
+        * EQU
+        * 三重ループ
 
 ## n日目
 参考
