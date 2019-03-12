@@ -1,1 +1,6 @@
 /z_tools_osx/
+*.img
+*.lst
+*.bin
+*.bat
+*.TBL

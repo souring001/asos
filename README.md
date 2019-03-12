@@ -45,6 +45,10 @@ http://hrb.osask.jp/wiki/?tools/nask
 
 https://hikalium.com/page/note/20161202.md
 
+これを使えばnaskをNASMに書き換えることなく本書と同等のことができる。Makefileを`.exe`消したり`del`を`rm`に書き直すなどで`make run`を実行できるようになる。
+
+https://github.com/HariboteOS/z_tools_osx
+
 * できたこと
     * nasmで`helloos.nas`をアセンブル
     * qemuで`helloos.img`を起動
@@ -75,6 +79,16 @@ https://hikalium.com/page/note/20161202.md
     * terminalのgitのcommiterがなぜか違うメールアドレスとユーザ名になっておりそれを以下で訂正
     * `git config --global user.email "hoge@mail"`
     * `git config --global user.name "hogename"`
+    * gitignoreの作成
+        * https://qiita.com/anqooqie/items/110957797b3d5280c44f
+
+先駆者のMac, Linux翻訳がすごい...。
+
+## 3日目
+参考
+* できたこと
+* できなかった
+* 得たこと
 
 ## n日目
 参考
