@@ -167,10 +167,10 @@ VGAのページ http://oswiki.osask.jp/?VGA
 * なんで\が¥じゃないと動作しないんだろうって思ったらShift-JIS
 
 ## 今後
+* 昔のMacOSみたいなの再現したいな
 
-読みたい
-https://adventar.org/calendars/1666
+* 読みたい https://adventar.org/calendars/1666
 
-PCを自作してみた動画、OS、コンパイラ、CPUから作ってみたいもの
+* PCを自作してみた動画、OS、コンパイラ、CPUから作ってみたいもの
 
-「CPUの創りかた」
+* 「CPUの創りかた」を読む
