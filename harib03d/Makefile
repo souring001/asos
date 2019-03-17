@@ -4,26 +4,26 @@ OBJS_BOOTPACK = bootpack.obj naskfunc.obj hankaku.obj graphic.obj dsctbl.obj \
 TOOLPATH = ../z_tools/
 INCPATH  = ../z_tools/haribote/
 
-MAKE     = $(TOOLPATH)make.exe -r
-NASK     = $(TOOLPATH)nask.exe
-CC1      = $(TOOLPATH)cc1.exe -I$(INCPATH) -Os -Wall -quiet
-GAS2NASK = $(TOOLPATH)gas2nask.exe -a
-OBJ2BIM  = $(TOOLPATH)obj2bim.exe
-MAKEFONT = $(TOOLPATH)makefont.exe
-BIN2OBJ  = $(TOOLPATH)bin2obj.exe
-BIM2HRB  = $(TOOLPATH)bim2hrb.exe
+MAKE     = $(TOOLPATH)make -r
+NASK     = $(TOOLPATH)nask
+CC1      = $(TOOLPATH)gocc1 -I$(INCPATH) -Os -Wall -quiet
+GAS2NASK = $(TOOLPATH)gas2nask -a
+OBJ2BIM  = $(TOOLPATH)obj2bim
+MAKEFONT = $(TOOLPATH)makefont
+BIN2OBJ  = $(TOOLPATH)bin2obj
+BIM2HRB  = $(TOOLPATH)bim2hrb
 RULEFILE = $(TOOLPATH)haribote/haribote.rul
-EDIMG    = $(TOOLPATH)edimg.exe
+EDIMG    = $(TOOLPATH)edimg
 IMGTOL   = $(TOOLPATH)imgtol.com
-COPY     = copy
-DEL      = del
+COPY     = cp
+DEL      = rm -f
 
-# ƒfƒtƒHƒ‹ƒg“®ì
+# ï¿½fï¿½tï¿½Hï¿½ï¿½ï¿½gï¿½ï¿½ï¿½ï¿½
 
 default :
 	$(MAKE) img
 
-# ƒtƒ@ƒCƒ‹¶¬‹K‘¥
+# ï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Kï¿½ï¿½
 
 ipl10.bin : ipl10.nas Makefile
 	$(NASK) ipl10.nas ipl10.bin ipl10.lst
@@ -46,7 +46,7 @@ bootpack.hrb : bootpack.bim Makefile
 	$(BIM2HRB) bootpack.bim bootpack.hrb 0
 
 haribote.sys : asmhead.bin bootpack.hrb Makefile
-	copy /B asmhead.bin+bootpack.hrb haribote.sys
+	cat asmhead.bin bootpack.hrb > haribote.sys
 
 haribote.img : ipl10.bin haribote.sys Makefile
 	$(EDIMG)   imgin:../z_tools/fdimg0at.tek \
@@ -54,7 +54,7 @@ haribote.img : ipl10.bin haribote.sys Makefile
 		copy from:haribote.sys to:@: \
 		imgout:haribote.img
 
-# ˆê”Ê‹K‘¥
+# ï¿½ï¿½ï¿½Ê‹Kï¿½ï¿½
 
 %.gas : %.c Makefile
 	$(CC1) -o $*.gas $*.c
@@ -65,14 +65,14 @@ haribote.img : ipl10.bin haribote.sys Makefile
 %.obj : %.nas Makefile
 	$(NASK) $*.nas $*.obj $*.lst
 
-# ƒRƒ}ƒ“ƒh
+# ï¿½Rï¿½}ï¿½ï¿½ï¿½h
 
 img :
 	$(MAKE) haribote.img
 
 run :
 	$(MAKE) img
-	$(COPY) haribote.img ..\z_tools\qemu\fdimage0.bin
+	$(COPY) haribote.img ../z_tools/qemu/fdimage0.bin
 	$(MAKE) -C ../z_tools/qemu
 
 install :
@@ -80,14 +80,14 @@ install :
 	$(IMGTOL) w a: haribote.img
 
 clean :
-	-$(DEL) *.bin
-	-$(DEL) *.lst
-	-$(DEL) *.obj
-	-$(DEL) bootpack.map
-	-$(DEL) bootpack.bim
-	-$(DEL) bootpack.hrb
-	-$(DEL) haribote.sys
+	$(DEL) *.bin
+	$(DEL) *.lst
+	$(DEL) *.obj
+	$(DEL) bootpack.map
+	$(DEL) bootpack.bim
+	$(DEL) bootpack.hrb
+	$(DEL) haribote.sys
 
 src_only :
 	$(MAKE) clean
-	-$(DEL) haribote.img
+	$(DEL) haribote.img

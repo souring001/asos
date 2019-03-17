@@ -162,6 +162,9 @@ Makefile覚書　https://qiita.com/Shigets/items/27170827707e5136ee89
     * ソースファイル`bootpack.c`の分割
     * Makefileに一般規則を追加
     * ヘッダファイル`bootpack.h`の追加
+    * PIC初期化`int.c`
+    * 割り込みハンドラ作成
+    * `io_sti()`で割り込み許可してる
 * 得たこと
     * ソースファイル分割のメリット
         * 変更する時に目的の場所を探しやすい
@@ -175,7 +178,27 @@ Makefile覚書　https://qiita.com/Shigets/items/27170827707e5136ee89
         ```
     * `#include "..."`はソースファイルと同じフォルダにある場合
     * `#include <...>`はコンパイラにおまけでついてくるフォルダにある場合
+    * ヘッダファイル追加してもMakefile変更しなくて大丈夫だった
+    * PIC(programmable interrupt controller)
+        * 割り込みを監視するためのチップ
+        * 割り込み信号をマスタとスレーブで15個扱える
+        * PICにはレジスタがある
+            * IMR
+            * ICW
+    * 割り込みハンドラはレジスタを割り込み前の状態に戻すために`PUSHAD`でスタックに全部レジスタを詰め込む
+    * IMR(inturrupt mask register)
+    * ICW(initial control word)
+    * NASM命令
+        * IRETD
+        * CALL
+        * PUSHAD
 * 疑問
+    * IMRとICWがよくわかってない
+    * 以下でキーボードとマウスが許可される理由
+    ```c    
+    io_out8(PIC0_IMR, 0xf9); /* PIC1とキーボードを許可(11111001) */
+	io_out8(PIC1_IMR, 0xef); /* マウスを許可(11101111) */
+    ```
 
 ## n日目
 参考
@@ -186,11 +209,12 @@ Makefile覚書　https://qiita.com/Shigets/items/27170827707e5136ee89
 ## 30日OSあるある
 * Windowsなの...?
 * LinuxやMacでやった先駆者に感心する
-* なんで\が¥じゃないと動作しないんだろうって思ったらShift-JIS
+* なんで\が¥じゃないと動作しないんだろうって思ったらShift-JISだった
 * マウス動かせるまでに3日もかかるんかい
+* GDTレジスタが現れたあたりから図を描かないと理解できなくなってくる
 
 ## 今後
-* 昔のMacOSみたいなの再現したいな
+* 昔のOSXみたいなの再現したいな
 
 * 読みたい https://adventar.org/calendars/1666
 
