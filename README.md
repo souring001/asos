@@ -179,6 +179,10 @@ Makefile覚書　https://qiita.com/Shigets/items/27170827707e5136ee89
     * `#include "..."`はソースファイルと同じフォルダにある場合
     * `#include <...>`はコンパイラにおまけでついてくるフォルダにある場合
     * ヘッダファイル追加してもMakefile変更しなくて大丈夫だった
+    * GDTレジスタ
+        * セグメントのベース番地
+        * リミット
+        * セグメント属性(セグメントのアクセス権)
     * PIC(programmable interrupt controller)
         * 割り込みを監視するためのチップ
         * 割り込み信号をマスタとスレーブで15個扱える
