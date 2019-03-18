@@ -204,6 +204,18 @@ Makefile覚書　https://qiita.com/Shigets/items/27170827707e5136ee89
 	io_out8(PIC1_IMR, 0xef); /* マウスを許可(11101111) */
     ```
 
+## 7日目
+参考
+
+http://oswiki.osask.jp/?(PIC)8259A
+
+http://oswiki.osask.jp/?(AT)keyboard
+
+* できたこと
+    * キーコードの取得
+* 得たこと
+* 疑問
+
 ## n日目
 参考
 * できたこと
