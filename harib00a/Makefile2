@@ -6,12 +6,12 @@ IMGTOL   = $(TOOLPATH)imgtol.com
 COPY     = cp
 DEL      = rm -f
 
-# �f�t�H���g����
+# デフォルト動作
 
 default :
 	$(MAKE) img
 
-# �t�@�C�������K��
+# ファイル生成規則
 
 ipl.bin : ipl.nas Makefile
 	$(NASK) ipl.nas ipl.bin ipl.lst
@@ -20,7 +20,7 @@ haribote.img : ipl.bin Makefile
 	$(EDIMG)   imgin:../z_tools/fdimg0at.tek \
 		wbinimg src:ipl.bin len:512 from:0 to:0   imgout:haribote.img
 
-# �R�}���h
+# コマンド
 
 asm :
 	$(MAKE) ipl.bin

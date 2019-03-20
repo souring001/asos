@@ -43,7 +43,7 @@ http://oswiki.osask.jp/?(AT)memorymap
 
 http://hrb.osask.jp/wiki/?tools/nask
 
-https://hikalium.com/page/note/20161202.md
+https://hikalium.com/pages/note/20161202.html
 
 これを使えばnaskをNASMに書き換えることなく本書と同等のことができる。Makefileを`.exe`消したり`del`を`rm`に書き直すなどで`make run`を実行できるようになる。
 

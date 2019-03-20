@@ -3,7 +3,7 @@ void write_mem8(int addr, int data);
 
 void HariMain(void)
 {
-	int i; /* •Ï”éŒ¾Bi‚Æ‚¢‚¤•Ï”‚ÍA32ƒrƒbƒg‚Ì®”Œ^ */
+	int i; /* ï¿½Ïï¿½ï¿½éŒ¾ï¿½Biï¿½Æ‚ï¿½ï¿½ï¿½ï¿½Ïï¿½ï¿½ÍA32ï¿½rï¿½bï¿½gï¿½Ìï¿½ï¿½ï¿½ï¿½^ */
 	char *p;
 
 
