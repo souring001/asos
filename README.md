@@ -212,8 +212,11 @@ http://oswiki.osask.jp/?(PIC)8259A
 http://oswiki.osask.jp/?(AT)keyboard
 
 * できたこと
-    * キーコードの取得
+  * キーコードの取得
+  * FIFO構造体の作成
 * 得たこと
+  * 割り込み処理は手早く
+  * `io_stihlt`の存在価値は、STI命令の後にHLTした場合はこの間に割り込みを受け付けないから
 * 疑問
 
 ## n日目
