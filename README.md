@@ -259,6 +259,18 @@ http://oswiki.osask.jp/?(AT)keyboard
 * 得たこと
 * 疑問
 
+## 11日目
+`HariboteOS`ディレクトリ内で`.TBL`と`.bat`を削除した
+``` bash
+find . -name "*.TBL"|xargs rm
+find . -name "*.bat"|xargs rm
+```
+* できたこと
+いえーい
+* 得たこと
+* 疑問
+
+
 ## n日目
 参考
 * できたこと
