@@ -266,7 +266,7 @@ find . -name "*.TBL"|xargs rm
 find . -name "*.bat"|xargs rm
 ```
 * できたこと
-ははは
+
 * 得たこと
 * 疑問
 
